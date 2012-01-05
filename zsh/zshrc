@@ -1,0 +1,14 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/paulol/.zshrc'
+
+autoload -Uz compinit
+autoload -U compinit
+compinit
+# End of lines added by compinstall
+autoload -U colors && colors
+export PS1="[%{$fg[green]%}%n%{$reset_color%}][%{$fg[cyan]%}%d%{$reset_color%}][%{$fg[magenta]%*%{$reset_color%}]%|>| "
