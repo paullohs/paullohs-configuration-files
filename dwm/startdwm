@@ -1,0 +1,18 @@
+# use this script in .xinitrc
+#!/bin/bash
+
+xrdb -merge ~/.Xresources &
+
+feh --bg-scale /home/paulol/Wallpaper/wallpaper-1386576.png &
+
+
+while true; do
+	#xsetroot -name "$(uptime | sed 's/.*://; s/,//g') ~ $(date +"%a %d.%m  %H:%M:%S")"
+  	TEXT=$(echo "CPU: `cat /proc/loadavg | cut -c 1-14` | MEM: `free -m | awk '$1 ~ /^-/ {print $3}'` MB |`date +%k:%M:%S`");
+  	xsetroot -name "$TEXT";
+	sleep 1
+done &
+
+while true; do
+	dwm || exit
+done
