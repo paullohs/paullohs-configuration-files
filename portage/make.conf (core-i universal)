@@ -1,0 +1,21 @@
+CFLAGS="-march=native -O2 -pipe"
+CXXFLAGS="${CFLAGS}"
+
+
+CHOST="x86_64-pc-linux-gnu"
+
+
+MAKEOPTS="-j5" #use 9 if hyperthreading is available (i7)
+GENTOO_MIRRORS="ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo"
+SYNC="rsync://rsync3.de.gentoo.org/gentoo-portage"
+ACCEPT_LICENSE="*"
+
+USE="
+truetype new-login xorg xscreensaver xv xcomposite xinerama opengl aiglx
+jpeg gif tiff png svg pdf
+sse sse2 sse3 sse4 mmx java bzip2 symlink sqlite spell xml
+minimal savedconfig consolekit unicode nls session ldap nsplugin hal fam dbus udev aoss bls X xft acpi crypt also cdr threads dri
+gtk gtk3
+
+-selinux -multilib -3dfx -laptop -fortran -arts -win64 -ipv6 -examples -doc -debug -kde -gnome -kdeenablefinal -qt4 -qt3 -rdesktop
+"
